@@ -9,18 +9,18 @@ public class IngressoPista extends Ingresso {
     }
     
     public IngressoPista() {
+        super();
     }
     
     //valor do ingresso pista é o valor único do evento
     @Override
     protected void calculaValor() {
-        this.setValor(this.getEvento().getValor());
+        this.setValor(this.getEvento().getValorUnico());
     }
     
     @Override
     public void imprimirValor() {
         System.out.println("Tipo do ingresso: Pista");
         System.out.println("Valor do ingresso: " + this.getValor());
-        System.out.println();
     }
 }

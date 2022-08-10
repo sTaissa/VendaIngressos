@@ -9,19 +9,18 @@ public class IngressoCamarote extends Ingresso {
     }
     
     public IngressoCamarote() {
-        
+        super();
     }
 
     //valor do ingresso camarote é 60% mais caro que o valor único do evento
     @Override
     protected void calculaValor() {
-        this.setValor(this.getEvento().getValor() * 1.6);
+        this.setValor(this.getEvento().getValorUnico() * 1.6);
     }
     
     @Override
     public void imprimirValor() {
         System.out.println("Tipo do ingresso: Camarote");
         System.out.println("Valor do ingresso: " + this.getValor());
-        System.out.println();
     }
 }

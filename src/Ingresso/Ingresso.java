@@ -14,7 +14,7 @@ public abstract class Ingresso {
     
     //exibe um resumo mostrando os dados do proprietário do ingresso e do evento
     public void resumo(){
-        System.out.println("--Dados do Ingresso--");
+        System.out.println("\n--Dados do Ingresso--");
         System.out.println("Nome: " + this.getNome());
         System.out.println("CPF: " + this.getCpf());
         System.out.println("Evento: " + this.getEvento().getNome());
@@ -25,6 +25,7 @@ public abstract class Ingresso {
     //construtores
     public Ingresso() {
         this.calculaValor();
+        this.evento.venderIngresso(this);
     }
     
     public Ingresso(String nome, String cpf, Evento evento) {
@@ -33,6 +34,7 @@ public abstract class Ingresso {
         this.evento = evento;
         
         this.calculaValor();
+        this.evento.venderIngresso(this);
     }
 
     //getters e setters
@@ -60,11 +62,11 @@ public abstract class Ingresso {
         this.evento = evento;
     }
 
-    //apenas para calculo nas subclasses
-    protected double getValor() {
+    public double getValor() {
         return valor;
     }
 
+    //apenas para calculo nas subclasses
     protected void setValor(double valor) {
         this.valor = valor;
     }
