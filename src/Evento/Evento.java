@@ -9,20 +9,36 @@ public class Evento {
     private int capMax;
     private ArrayList<Ingresso> ingressos;
     
+    //adiciona todo ingresso criado na lista, a menos que já tenha excedido a capacidade máxima do evento
     public void venderIngresso(Ingresso ingresso) {
         if(this.ingressos.size() < capMax) {
-            ingressos.add(ingresso);
+            this.ingressos.add(ingresso);
+            System.out.println("\nINGRESSO VENDIDO");
+            ingresso.resumoIngresso();
         } else {
-            System.out.println("Não é possível vender mais ingressos, capacidade máxima atingida\n");
+            System.out.println("\nNão é possível vender mais ingressos, capacidade máxima atingida");
         }
     }
     
+    //mostra a quantidade de ingressos vendidos 
     public void quantidadeIngressos() {
-        System.out.println("Evento: " + this.nome + "\nQuantidade de ingressos vendidos: " + this.ingressos.size());
+        System.out.println("\nEvento: " + this.getNome());
+        System.out.println("Quantidade de ingressos vendidos: " + this.ingressos.size());
         
-        for(Ingresso ingresso : this.ingressos) {
-            ingresso.resumo();
+        for(int i = 0; i < this.ingressos.size(); i++) {
+            System.out.println("\nINGRESSO " + (i+1));
+            this.ingressos.get(i).resumoIngresso();
         }
+    }
+    
+    //mostra um resumo dos dados do evento
+    public void resumoEvento() {
+        System.out.println("\n--Dados do Evento--");
+        System.out.println("Evento: " + this.getNome());
+        System.out.println("Data: " + this.getData());
+        System.out.println("Capacidade máxima: " + this.getCapMax());
+        System.out.println("Valor do ingresso: " + this.getValorUnico());
+        System.out.println("Quantidade de ingressos vendidos: " + this.ingressos.size());
     }
 
     //construtores
@@ -38,6 +54,7 @@ public class Evento {
         this.ingressos = new ArrayList<>();
     }
 
+    //getters e setters
     public String getNome() {
         return nome;
     }

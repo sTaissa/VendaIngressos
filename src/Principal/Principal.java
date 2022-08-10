@@ -14,6 +14,7 @@ public class Principal {
         IngressoVip ingresso2 = new IngressoVip("Paulo", "158.315.972-87", evento1);
         IngressoCamarote ingresso3 = new IngressoCamarote("Joaquim", "158.315.972-87", evento1);
         
+        evento1.resumoEvento();
         evento1.quantidadeIngressos();
     }
 }

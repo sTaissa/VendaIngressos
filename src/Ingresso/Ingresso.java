@@ -12,9 +12,9 @@ public abstract class Ingresso {
     protected abstract void calculaValor();
     public abstract void imprimirValor();
     
-    //exibe um resumo mostrando os dados do proprietário do ingresso e do evento
-    public void resumo(){
-        System.out.println("\n--Dados do Ingresso--");
+    //exibe um resumo mostrando os dados do ingresso
+    public void resumoIngresso(){
+        System.out.println("--Dados do Ingresso--");
         System.out.println("Nome: " + this.getNome());
         System.out.println("CPF: " + this.getCpf());
         System.out.println("Evento: " + this.getEvento().getNome());
