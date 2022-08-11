@@ -15,7 +15,8 @@ public abstract class Ingresso {
     
     //exibe o valor e tipo do ingresso
     public void imprimirValor() {
-        String msg = "Tipo do ingresso: " + this.getTipoIngresso() + "\n";
+        String msg = "Evento: " + this.getEvento().getNome() + "\n";
+        msg += "Tipo do ingresso: " + this.getTipoIngresso() + "\n";
         msg += "Valor do ingresso: " + this.getValor();
         JOptionPane.showMessageDialog(null, msg);
     }
@@ -34,9 +35,7 @@ public abstract class Ingresso {
 
     //construtores
     public Ingresso() {
-        this.calculaValor();
-        this.informaTipoIngresso();
-        this.evento.venderIngresso(this);
+        
     }
     
     public Ingresso(String nome, String cpf, Evento evento) {
@@ -46,7 +45,6 @@ public abstract class Ingresso {
         
         this.calculaValor();
         this.informaTipoIngresso();
-        this.evento.venderIngresso(this);
     }
 
     //getters e setters
@@ -72,6 +70,9 @@ public abstract class Ingresso {
 
     public void setEvento(Evento evento) {
         this.evento = evento;
+        
+        this.calculaValor();
+        this.informaTipoIngresso();
     }
 
     public double getValor() {

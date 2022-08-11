@@ -13,8 +13,12 @@ public class Evento {
     //adiciona todo ingresso criado na lista, a menos que já tenha excedido a capacidade máxima do evento
     public void venderIngresso(Ingresso ingresso) {
         if(this.ingressos.size() < capMax) {
-            this.ingressos.add(ingresso); 
-            ingresso.resumoIngresso(); //lista o ingresso vendido, como uma espécie de comprovante
+            if(ingresso.getNome() != null && ingresso.getCpf() != null && ingresso.getEvento() != null) {
+                this.ingressos.add(ingresso); 
+                ingresso.resumoIngresso(); //lista o ingresso vendido, como uma espécie de comprovante
+            } else {
+                JOptionPane.showMessageDialog(null, "Não é possível vender esse ingressos, informe os dados primeiro");
+            }
         } else {
             JOptionPane.showMessageDialog(null, "Não é possível vender mais ingressos, capacidade máxima atingida");
         }
