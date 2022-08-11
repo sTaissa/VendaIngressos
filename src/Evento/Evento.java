@@ -2,43 +2,48 @@ package Evento;
 
 import Ingresso.Ingresso;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Evento {
     private String nome, data;
-    private float valorUnico;
+    private double valorUnico;
     private int capMax;
     private ArrayList<Ingresso> ingressos;
     
     //adiciona todo ingresso criado na lista, a menos que já tenha excedido a capacidade máxima do evento
     public void venderIngresso(Ingresso ingresso) {
         if(this.ingressos.size() < capMax) {
-            this.ingressos.add(ingresso);
-            System.out.println("\nINGRESSO VENDIDO");
-            ingresso.resumoIngresso();
+            this.ingressos.add(ingresso); 
+            ingresso.resumoIngresso(); //lista o ingresso vendido, como uma espécie de comprovante
         } else {
-            System.out.println("\nNão é possível vender mais ingressos, capacidade máxima atingida");
+            JOptionPane.showMessageDialog(null, "Não é possível vender mais ingressos, capacidade máxima atingida");
         }
     }
     
     //mostra a quantidade de ingressos vendidos 
     public void quantidadeIngressos() {
-        System.out.println("\nEvento: " + this.getNome());
-        System.out.println("Quantidade de ingressos vendidos: " + this.ingressos.size());
+        String msg = "Evento: " + this.getNome() + "\n";
+        msg += "Quantidade de ingressos vendidos: " + this.ingressos.size() + "\n\n";
         
         for(int i = 0; i < this.ingressos.size(); i++) {
-            System.out.println("\nINGRESSO " + (i+1));
-            this.ingressos.get(i).resumoIngresso();
+            msg += "INGRESSO " + (i+1) + "\n";
+            msg += "Nome: " + this.ingressos.get(i).getNome() + "\n";
+            msg += "CPF: " + this.ingressos.get(i).getCpf() + "\n";
+            msg += "Tipo de ingresso: " + this.ingressos.get(i).getTipoIngresso() + "\n";
+            msg += "Valor do ingresso: R$" + this.ingressos.get(i).getValor() + "\n\n";
         }
+        JOptionPane.showMessageDialog(null, msg);
     }
     
     //mostra um resumo dos dados do evento
     public void resumoEvento() {
-        System.out.println("\n--Dados do Evento--");
-        System.out.println("Evento: " + this.getNome());
-        System.out.println("Data: " + this.getData());
-        System.out.println("Capacidade máxima: " + this.getCapMax());
-        System.out.println("Valor do ingresso: " + this.getValorUnico());
-        System.out.println("Quantidade de ingressos vendidos: " + this.ingressos.size());
+        String msg = "DADOS DO EVENTO\n\n";
+        msg += "Evento: " + this.getNome() + "\n";
+        msg += "Data: " + this.getData() + "\n";
+        msg += "Capacidade máxima: " + this.getCapMax() + "\n";
+        msg += "Valor do ingresso: R$" + this.getValorUnico() + "\n";
+        msg += "Quantidade de ingressos vendidos: " + this.ingressos.size();
+        JOptionPane.showMessageDialog(null, msg);
     }
 
     //construtores
@@ -71,11 +76,11 @@ public class Evento {
         this.data = data;
     }
 
-    public float getValorUnico() {
+    public double getValorUnico() {
         return valorUnico;
     }
 
-    public void setValorUnico(float valor) {
+    public void setValorUnico(double valor) {
         this.valorUnico = valor;
     }
 

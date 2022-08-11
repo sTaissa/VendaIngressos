@@ -1,6 +1,7 @@
 package Ingresso;
 
 import Evento.Evento;
+import javax.swing.JOptionPane;
 
 public class IngressoPista extends Ingresso {
     //construtores
@@ -17,10 +18,10 @@ public class IngressoPista extends Ingresso {
     protected void calculaValor() {
         this.setValor(this.getEvento().getValorUnico());
     }
-    
+
+    //seta o tipo de ingresso de acordo com a classe
     @Override
-    public void imprimirValor() {
-        System.out.println("Tipo do ingresso: Pista");
-        System.out.println("Valor do ingresso: " + this.getValor());
+    protected void informaTipoIngresso() {
+       this.setTipoIngresso("Pista");
     }
 }
