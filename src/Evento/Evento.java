@@ -1,11 +1,14 @@
 package Evento;
 
 import Ingresso.Ingresso;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class Evento {
-    private String nome, data;
+    private String nome;
+    private LocalDate data;
     private double valorUnico;
     private int capMax;
     private ArrayList<Ingresso> ingressos;
@@ -17,7 +20,7 @@ public class Evento {
                 this.ingressos.add(ingresso); 
                 ingresso.resumoIngresso(); //lista o ingresso vendido, como uma espécie de comprovante
             } else {
-                JOptionPane.showMessageDialog(null, "Não é possível vender esse ingressos, informe os dados primeiro");
+                JOptionPane.showMessageDialog(null, "Não é possível vender esse ingressos, informe os dados corretamente");
             }
         } else {
             JOptionPane.showMessageDialog(null, "Não é possível vender mais ingressos, capacidade máxima atingida");
@@ -55,11 +58,12 @@ public class Evento {
         this.ingressos = new ArrayList<>();
     }
     
-    public Evento(String nome, String data, float valor, int capMax) {
-        this.nome = nome;
-        this.data = data;
-        this.valorUnico = valor;
-        this.capMax = capMax;
+    //usar o set garante que as instruções adicionais necessárias ao setar uma variável sejam executadas
+    public Evento(String nome, String data, double valor, int capMax) {
+        this.setNome(nome);
+        this.setData(data);
+        this.setValorUnico(valor);
+        this.setCapMax(capMax);
         this.ingressos = new ArrayList<>();
     }
 
@@ -73,11 +77,15 @@ public class Evento {
     }
 
     public String getData() {
-        return data;
+        return data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
-    public void setData(String data) {
+    public void setData(LocalDate data) {
         this.data = data;
+    }
+    
+    public void setData(String data) {
+        this.data = LocalDate.parse(data, DateTimeFormatter.ofPattern("dd/MM/yyyy"));
     }
 
     public double getValorUnico() {
@@ -94,5 +102,9 @@ public class Evento {
 
     public void setCapMax(int capMax) {
         this.capMax = capMax;
+    }
+
+    public ArrayList<Ingresso> getIngressos() {
+        return ingressos;
     }
 }

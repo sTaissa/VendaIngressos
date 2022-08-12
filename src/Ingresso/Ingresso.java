@@ -17,7 +17,7 @@ public abstract class Ingresso {
     public void imprimirValor() {
         String msg = "Evento: " + this.getEvento().getNome() + "\n";
         msg += "Tipo do ingresso: " + this.getTipoIngresso() + "\n";
-        msg += "Valor do ingresso: " + this.getValor();
+        msg += "Valor do ingresso: R$" + this.getValor();
         JOptionPane.showMessageDialog(null, msg);
     }
     
@@ -38,13 +38,11 @@ public abstract class Ingresso {
         
     }
     
+    //usar o set garante que as instruções adicionais necessárias ao setar uma variável sejam executadas
     public Ingresso(String nome, String cpf, Evento evento) {
-        this.nome = nome;
-        this.cpf = cpf;
-        this.evento = evento;
-        
-        this.calculaValor();
-        this.informaTipoIngresso();
+        this.setNome(nome);
+        this.setCpf(cpf);
+        this.setEvento(evento);
     }
 
     //getters e setters
