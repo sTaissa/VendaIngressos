@@ -12,7 +12,8 @@
  <a href="#descrição">Descriçao</a> •
  <a href="#enunciado">Enunciado</a> • 
  <a href="#prints">Screen Shots</a> • 
- <a href="#tecnologias">Tecnologias</a>
+ <a href="#tecnologias">Tecnologias</a> • 
+ <a href="#autor">Autor</a>
 </p>
 
 <h3 id="enunciado"> 🔎 Enunciado da questão </h3>
