@@ -1,20 +1,20 @@
 <h1 align="center"> 🎟 Venda de Ingressos  </h1>
 <p id="descrição" align="center"> Um sistema sismples de venda de ingressos para shows e eventos. Atividade MAPA da matéria de Programação I </p>
  
-<p align="center">
+<div align="center">
   <img src="https://img.shields.io/static/v1?label=Faculdade&message=Unicesumar&color=4e2bd5&style=flat"/>
   <img src="https://img.shields.io/static/v1?label=Curso&message=ADS&color=4e2bd5&style=flat"/>
   <img src="https://img.shields.io/static/v1?label=Matéria&message=Programação I&color=4e2bd5&style=flat"/>
   <img src="https://img.shields.io/static/v1?label=IDE&message=NetBeans 12.4&color=4e2bd5&style=flat"/>
-</p>
+</div>
 
-<p align="center">
+<div align="center">
  <a href="#descrição">Descriçao</a> •
  <a href="#enunciado">Enunciado</a> • 
  <a href="#prints">Screen Shots</a> • 
  <a href="#tecnologias">Tecnologias</a> • 
  <a href="#autor">Autor</a>
-</p>
+</div>
 
 <h3 id="enunciado"> 🔎 Enunciado da questão </h3>
 
@@ -43,7 +43,31 @@
 
 <h3 id="prints"> 📌 Screen Shots </h3>
 
-<p> 🚧 Tópico em construção 🚧 </p>
+<p> Dados do evento em questão: </p>
+<img src="./images/dados-iniciais-evento.PNG">
+
+<p> Valor de cada tipo de ingresso: </p>
+<div>
+  <img src="./images/valor-ingresso-pista.PNG">
+  <img src="./images/valor-ingresso-vip.PNG">
+  <img src="./images/valor-ingresso-camarote.PNG">
+</div>
+
+<p> Venda de ingressos: </p>
+<div>
+  <img src="./images/venda-ingresso1.PNG">
+  <img src="./images/venda-ingresso2.PNG">
+  <img src="./images/venda-ingresso3.PNG">
+</div>
+
+<p> Venda de ingresso com dados incompletos: </p>
+<img src="./images/venda-ingresso-dados-faltando.PNG">
+
+<p> Venda de ingresso quando a capacidade máxima foi excedida: </p>
+<img src="./images/venda-ingresso-capacidade-excedida.PNG">
+
+<p> Quantidade de ingressos vendidos: </p>
+<img src="./images/quantidade-ingressos-vendidos.PNG">
 
 <h3 id="tecnologias"> 🛠 Tecnologias </h3
 
@@ -54,7 +78,7 @@
 </ul>
 
 <h3 id="autor">👩‍💻 Autor</h3>
-<! -- colocar imagem <img src="./images/me.jpg" height="100px"/>
+<img src="./images/autor.PNG" height="100px"/>
 <p><b>Taissa Silva</b></p>
 
 [![Linkedin Badge](https://img.shields.io/badge/-Taissa-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/taissa-silva-39a4171b5/)](https://www.linkedin.com/in/taissa-silva-39a4171b5/) 
